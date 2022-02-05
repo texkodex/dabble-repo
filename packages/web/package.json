@@ -10,6 +10,12 @@
     "gen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-dialog": "^0.1.5",
+    "@radix-ui/react-icons": "^1.0.3",
+    "@radix-ui/react-popover": "0.1.4",
+    "@radix-ui/react-toolbar": "^0.1.4",
+    "@stitches/react": "^1.2.6",
     "graphql": "^16.3.0",
     "next": "12.0.10",
     "react": "17.0.2",
@@ -19,6 +25,7 @@
   "devDependencies": {
     "@graphql-codegen/cli": "^2.4.0",
     "@types/react": "^17.0.38",
+    "@types/styled-components": "^5.1.21",
     "eslint": "8.8.0",
     "eslint-config-next": "12.0.10"
   }
