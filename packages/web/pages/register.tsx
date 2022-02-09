@@ -4,7 +4,7 @@ import {
   DialogTitle,
   DialogDescription,
   DialogClose,
-} from "../components/dialog";
+} from "../components/Dialog";
 import {
   Button,
   Fieldset,
@@ -12,7 +12,7 @@ import {
   IconButton,
   Input,
   Label,
-} from "../components/input";
+} from "../components/Input";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { useRouter } from "next/router";
 import React from "react";
@@ -21,12 +21,16 @@ const DialogDemo = () => {
   const router = useRouter();
   return (
     <Dialog open={true}>
-      <DialogContent>
+      <DialogContent css={{ backgroundColor: "$violet4" }}>
         <DialogTitle>Register User</DialogTitle>
         <DialogDescription>Register to see more of the site.</DialogDescription>
         <Fieldset>
-          <Label htmlFor="nameOrEmail">Name or Email</Label>
-          <Input id="name" placeholder="name or email" />
+          <Label htmlFor="name">Name</Label>
+          <Input id="name" placeholder="name" />
+        </Fieldset>
+				<Fieldset>
+          <Label htmlFor="email">Email</Label>
+          <Input id="email" placeholder="email" />
         </Fieldset>
         <Fieldset>
           <Label htmlFor="password">Password</Label>
@@ -35,10 +39,10 @@ const DialogDemo = () => {
         <Flex css={{ marginTop: 25, justifyContent: "flex-end" }}>
           <DialogClose asChild>
             <Button
-              aria-label="Close"
+              aria-label="Register"
               variant="pink"
               onClick={() => {
-                router.push("/");
+                router.push("/login");
               }}
             >
               register

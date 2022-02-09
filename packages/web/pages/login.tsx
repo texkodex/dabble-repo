@@ -4,7 +4,7 @@ import {
   DialogTitle,
   DialogDescription,
   DialogClose,
-} from "../components/dialog";
+} from "../components/Dialog";
 import {
 	Button,
 	Fieldset,
@@ -12,7 +12,7 @@ import {
 	IconButton,
 	Input,
 	Label,
-} from "../components/input";
+} from "../components/Input";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { useRouter } from "next/router";
 import React from "react";
@@ -21,11 +21,11 @@ const DialogDemo = () => {
 	const router = useRouter();
   return (
     <Dialog open={true}>
-      <DialogContent>
+      <DialogContent css={{ backgroundColor: "$violet4" }}>
         <DialogTitle>User login</DialogTitle>
         <DialogDescription>Thank you for returning.</DialogDescription>
         <Fieldset>
-          <Label htmlFor="name">Name or Email</Label>
+          <Label htmlFor="nameOrEmail">Name or Email</Label>
           <Input id="nameOrEmail" defaultValue="name or email" />
         </Fieldset>
         <Fieldset>
@@ -34,7 +34,7 @@ const DialogDemo = () => {
         </Fieldset>
         <Flex css={{ marginTop: 25, justifyContent: "flex-end" }}>
           <DialogClose asChild>
-            <Button aria-label="Close" variant="pink" onClick={ () => { router.push("/"); }} >
+            <Button aria-label="Login" variant="pink" onClick={ () => { router.push("/"); }} >
              login 
             </Button>
           </DialogClose>
