@@ -18,10 +18,12 @@ import { useRouter } from "next/router";
 import React from "react";
 
 const DialogDemo = () => {
-  const router = useRouter();
+	const router = useRouter();
+	const home = () => { router.push("/"); }; 
+	const register = () => { router.push("/"); };
   return (
     <Dialog open={true}>
-      <DialogContent css={{ backgroundColor: "$violet4" }}>
+      <DialogContent onClick={home}>
         <DialogTitle>Register User</DialogTitle>
         <DialogDescription>Register to see more of the site.</DialogDescription>
         <Fieldset>
@@ -41,9 +43,7 @@ const DialogDemo = () => {
             <Button
               aria-label="Register"
               variant="pink"
-              onClick={() => {
-                router.push("/login");
-              }}
+              onClick={register}
             >
               register
             </Button>
@@ -51,9 +51,7 @@ const DialogDemo = () => {
         </Flex>
         <DialogClose asChild>
           <IconButton
-            onClick={() => {
-              router.push("/");
-            }}
+            onClick={home}
           >
             <Cross2Icon />
           </IconButton>

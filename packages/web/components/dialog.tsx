@@ -16,7 +16,7 @@ const contentShow = keyframes({
 });
 
 const StyledOverlay = styled(DialogPrimitive.Overlay, {
-  backgroundColor: blackA.blackA9,
+  backgroundColor: blackA.blackA5,
   position: "fixed",
   inset: 0,
   "@media (prefers-reduced-motion: no-preference)": {

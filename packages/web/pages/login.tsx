@@ -19,9 +19,11 @@ import React from "react";
 
 const DialogDemo = () => {
 	const router = useRouter();
+	const home = () => { router.push("/"); }; 
+	const login = () => { router.push("/"); };
   return (
     <Dialog open={true}>
-      <DialogContent css={{ backgroundColor: "$violet4" }}>
+      <DialogContent onClick={home}>
         <DialogTitle>User login</DialogTitle>
         <DialogDescription>Thank you for returning.</DialogDescription>
         <Fieldset>
@@ -34,13 +36,13 @@ const DialogDemo = () => {
         </Fieldset>
         <Flex css={{ marginTop: 25, justifyContent: "flex-end" }}>
           <DialogClose asChild>
-            <Button aria-label="Login" variant="pink" onClick={ () => { router.push("/"); }} >
+            <Button aria-label="Login" variant="pink" onClick={login} >
              login 
             </Button>
           </DialogClose>
         </Flex>
         <DialogClose asChild >
-          <IconButton onClick={ () => { router.push("/"); }} >
+          <IconButton onClick={home} >
             <Cross2Icon />
           </IconButton>
         </DialogClose>
