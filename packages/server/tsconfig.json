@@ -6,7 +6,9 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "outDir": "./dist",
-    "moduleResolution": "node",
+		"moduleResolution": "node",
+		"declaration": true,
+		"composite": true,
     "removeComments": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -21,8 +23,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
-    "baseUrl": "."
+		"baseUrl": ".",
+		"rootDir": "src"
   },
   "exclude": ["node_modules"],
-  "include": ["./src/**/*.ts"]
+  "include": ["./src/**/*.tsx", "./src/**/*.ts"]
 }
