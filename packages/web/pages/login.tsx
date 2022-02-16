@@ -15,7 +15,6 @@ import {
 } from "../components/Input";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { useRouter } from "next/router";
-import React from "react";
 
 const DialogDemo = () => {
 	const router = useRouter();
