@@ -16,20 +16,7 @@ import {
   __sessionSecret__,
 } from "./constant";
 import connectRedis from "connect-redis";
-import Redis from "ioredis";
-
-export default function redisClientSetup(): Redis.Redis {
-  const url = `redis://${__redisHost__}:${__redisPort__}`;
-  console.log("url: ", url);
-  const redis = new Redis({
-    port: Number(__redisPort__),
-    host: __redisHost__,
-    family: 4,
-    db: 0,
-  });
-  redis.on("error", console.log);
-  return redis;
-}
+import redisClientSetup from "./redis";
 
 const main = async () => {
   console.log("starting ...");
@@ -63,7 +50,7 @@ const main = async () => {
         disableTTL: true,
       }),
       cookie: {
-        maxAge: 1000 * 60 * 60 * 24 * 365 * 10, // 10 years
+        maxAge: 1000 * 60 * 60 * 24 * 365 * 6, // 6 years
         httpOnly: true,
         sameSite: "lax", // csrf
         secure: __prod__, // cookie only works in https
